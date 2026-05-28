@@ -1,0 +1,55 @@
+# === Python ===
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# === Virtual environments ===
+venv/
+.venv/
+env/
+
+# === Jupyter ===
+.ipynb_checkpoints/
+
+# === IDE ===
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# === Data (regenerable, too large) ===
+data/raw/
+data/sequences/
+data/blast_results/
+data/resfinder_db/
+data/card/
+data/features/X_features.csv      # 976 × 328, regenerable
+data/features/y_labels.csv         # 976 × 9, regenerable
+data/features/gene_features_*.csv  # regenerable
+data/features/X_combined_*.csv     # regenerable
+
+# === Research-only models (not needed for demo) ===
+artifacts/rf_v2_models.pkl
+artifacts/xgb_v2_models.pkl
+
+# === Credentials ===
+kaggle.json
+.env
+.streamlit/secrets.toml
+
+# === OS ===
+Thumbs.db
+
+# === Sample data — ignore leftover demo files, keep only project-relevant files ===
+sample_data/mnist_*.csv
+sample_data/california_housing_*.csv
+sample_data/anscombe.json
+
+# === EXCEPTIONS (whitelist deployment artifacts) ===
+!artifacts/lr_v2_models.pkl
+!artifacts/scaler.pkl
+!artifacts/feature_names.pkl
+!artifacts/cv_results.csv
+!sample_data/*.fna
+!sample_data/README.md
