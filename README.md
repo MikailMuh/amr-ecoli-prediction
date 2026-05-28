@@ -5,12 +5,12 @@ Machine learning system for predicting antibiotic resistance phenotypes in
 AMR gene detection.
 
 ## Live Demo
-🔗 [amr-ecoli-prediction.streamlit.app](https://amr-ecoli-prediction.streamlit.app)
+🔗 [[amr-ecoli-prediction.streamlit.app](https://amr-ecoli-prediction-compbio1.streamlit.app/)](https://amr-ecoli-prediction.streamlit.app)
 
 ## Quick Start
 
 \`\`\`bash
-git clone https://github.com/[user]/amr-ecoli-prediction.git
+git clone https://github.com/MikailMuh/amr-ecoli-prediction.git
 cd amr-ecoli-prediction
 pip install -r requirements.txt
 streamlit run app.py
