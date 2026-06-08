@@ -9,22 +9,22 @@ AMR gene detection.
 
 ## Quick Start
 
-\`\`\`bash
+```bash
 git clone https://github.com/MikailMuh/amr-ecoli-prediction.git
 cd amr-ecoli-prediction
 pip install -r requirements.txt
 streamlit run app.py
-\`\`\`
+```
 
 ## Methodology
 - **Dataset:** BV-BRC E. coli AMR phenotypes (302 genomes)
-- **Features:** 328 compositional (GC, k-mer k=3, k=4) + 10 functional (BLAST + ResFinder)
+- **Features:** 863 compositional (GC, k-mer k=3, k=4) + 10 functional (BLAST + ResFinder)
 - **Models:** Logistic Regression (best), Random Forest, XGBoost
 - **Evaluation:** 5-fold stratified cross-validation
-- **Best result:** AUC 0.768 ± 0.039 (Logistic Regression)
+- **Best result:** AUC 0.753 ± 0.109 (Logistic Regression)
 
 ## Project Structure
-\`\`\`
+```
 ├── app.py               # Streamlit entry point
 ├── pages/               # Multi-page Streamlit views
 ├── src/                 # Core Python modules
@@ -34,10 +34,7 @@ streamlit run app.py
 │   └── visualization.py
 ├── scripts/             # Training & evaluation scripts
 └── notebooks/           # Original development notebooks
-\`\`\`
-
-## Citation
-If you use this code, please cite our paper [to be published].
+```
 
 ## License
 MIT
