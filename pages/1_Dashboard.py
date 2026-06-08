@@ -1,6 +1,7 @@
 """Results dashboard showing model performance metrics."""
 import pandas as pd
 import streamlit as st
+import matplotlib.pyplot as plt
 
 from src.config import ARTIFACTS_DIR
 
@@ -34,8 +35,15 @@ auc_pivot = (
     .unstack(level=0)
     .round(3)
 )
-st.dataframe(auc_pivot, use_container_width=True)
-st.bar_chart(auc_pivot)
+fig, ax = plt.subplots(figsize=(12, 5))
+auc_pivot.plot(kind='bar', ax=ax, width=0.8)
+ax.set_xlabel('Antibiotic')
+ax.set_ylabel('AUC')
+ax.set_title('Per-Antibiotic AUC-ROC by Model')
+ax.legend(title='Model')
+ax.tick_params(axis='x', rotation=45)
+plt.tight_layout()
+st.pyplot(fig)
 
 st.subheader("Methodology")
 st.markdown(
