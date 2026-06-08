@@ -26,7 +26,8 @@ cv_results = load_cv_results()
 
 st.subheader("Macro Performance (5-fold Cross-Validation)")
 macro = cv_results.groupby("model")[["F1", "AUC", "MCC"]].agg(["mean", "std"]).round(3)
-st.dataframe(macro, use_container_width=True)
+macro.columns = [f'{metric} ({stat})' for metric, stat in macro.columns]
+st.dataframe(macro)
 
 st.subheader("Per-Antibiotic AUC-ROC")
 auc_pivot = (
